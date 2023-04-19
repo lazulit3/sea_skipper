@@ -1,0 +1,24 @@
+[package]
+name = "sea_skipper_macros"
+version = "0.1.0"
+description = "Contains derive macros for `sea_skipper`"
+edition.license = true
+edition.license-file = true
+edition.repository = true
+edition.workspace = true
+
+[lib]
+proc-macro = true
+
+[dependencies]
+bae = { version = "0.1", default-features = false }
+heck = { version = "0.4", default-features = false }
+proc-macro2 = { version = "1", default-features = false }
+quote = { version = "1", default-features = false }
+syn = { version = "1", default-features = false, features = ["parsing", "proc-macro", "derive", "printing"] }
+
+[features]
+default = [ "derive-newmodel-with-serde" ]
+
+## Configures `DeriveNewModel` to derive `serde::Deserialize` & `Serialize` on `NewModel` structs.
+derive-newmodel-with-serde = []

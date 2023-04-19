@@ -1,0 +1,9 @@
+api:
+  host: "127.0.0.1"
+  port: 8081
+database:
+  host: "127.0.0.1"
+  port: 5433
+  username: "sea_skipper_axum_example"
+  password: "changeme"
+  database_name: "sea_skipper_axum_example"

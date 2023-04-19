@@ -1,0 +1,33 @@
+[workspace]
+members = [".", "sea_skipper_macros"]
+
+[workspace.package]
+authors = ["lazulite <lazulite@riseup.net>"]
+edition = "2021"
+license = "MIT"
+license-file = "LICENSE"
+repository = "https://github.com/lazulit3/sea_skipper"
+
+[package]
+name = "sea_skipper"
+version = "0.1.0"
+description = "A library that helps with `sea-orm` usage in some specific use cases."
+publish = false
+edition.authors = true
+edition.license = true
+edition.license-file = true
+edition.repository = true
+edition.workspace = true
+
+[dependencies]
+sea-orm = { version = "0.11", default-features = false }
+sea_skipper_macros = { path = "sea_skipper_macros", optional = true }
+serde = { version = "1" }
+
+[features]
+default = []
+
+## Enables derive macros
+derive = [ "sea_skipper_macros" ]
+## Configures `DeriveNewModel` to derive `serde::Deserialize` & `Serialize` on `NewModel` structs.
+derive-newmodel-with-serde = ["sea_skipper_macros?/derive-newmodel-with-serde"]
