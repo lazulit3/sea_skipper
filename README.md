@@ -19,4 +19,4 @@ In all seriousness, I do believe there is merit to the problems (& attempts to s
 
 ## Example of Usage
 
-`examples/axum_example` contains an example project using `sea_skipper` with an HTTP API built with ['axum'](https://docs.rs/axum/latest/axum/) and `sea-orm`.
+`examples/axum_example` contains an example project using `sea_skipper` with an HTTP API built with [`axum`](https://docs.rs/axum/latest/axum/) and `sea-orm`.
