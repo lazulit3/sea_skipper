@@ -5,7 +5,6 @@ members = [".", "sea_skipper_macros"]
 authors = ["lazulite <lazulite@riseup.net>"]
 edition = "2021"
 license = "MIT"
-license-file = "LICENSE"
 repository = "https://github.com/lazulit3/sea_skipper"
 
 [package]
@@ -13,11 +12,10 @@ name = "sea_skipper"
 version = "0.1.0"
 description = "A library that helps with `sea-orm` usage in some specific use cases."
 publish = false
-edition.authors = true
-edition.license = true
-edition.license-file = true
-edition.repository = true
+authors.workspace = true
 edition.workspace = true
+license.workspace = true
+repository.workspace = true
 
 [dependencies]
 sea-orm = { version = "0.11", default-features = false }
