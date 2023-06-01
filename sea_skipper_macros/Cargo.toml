@@ -2,10 +2,10 @@
 name = "sea_skipper_macros"
 version = "0.1.0"
 description = "Contains derive macros for `sea_skipper`"
-edition.license = true
-edition.license-file = true
-edition.repository = true
+authors.workspace = true
 edition.workspace = true
+license.workspace = true
+repository.workspace = true
 
 [lib]
 proc-macro = true
