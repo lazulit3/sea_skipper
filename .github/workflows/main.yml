@@ -10,17 +10,33 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build:
-
+  Lint:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
-    - name: Lint
-      run: cargo clippy --fix
-    - name: Formatting
-      run: cargo fmt --verbose --check
-    - name: Build
-      run: cargo build --verbose
-    - name: Run tests
-      run: cargo test --manifest-path ./examples/axum_example/Cargo.toml --verbose
+    - run: cargo clippy
+
+  Formatting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - run: cargo fmt --verbose --check
+  Tests:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_DB: sea_skipper_axum_example
+          POSTGRES_PASSWORD: changeme
+          POSTGRES_BD: sea_skipper_axum_example
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5433:5433
+    steps:
+    - uses: actions/checkout@v3
+    - run: cargo test --manifest-path ./examples/axum_example/Cargo.toml --verbose
