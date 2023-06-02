@@ -7,3 +7,4 @@ database:
   username: "sea_skipper_axum_example"
   password: "changeme"
   database_name: "sea_skipper_axum_example"
+  SEA_SKIPPER_AXUM_EXAMPLE_DB__DATABASE_HOST="postgres"
