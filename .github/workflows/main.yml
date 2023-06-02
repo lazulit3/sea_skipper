@@ -30,6 +30,7 @@ jobs:
           POSTGRES_DB: sea_skipper_axum_example
           POSTGRES_PASSWORD: changeme
           POSTGRES_BD: sea_skipper_axum_example
+          SEA_SKIPPER_AXUM_EXAMPLE_DB__DATABASE_HOST: postgres
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
