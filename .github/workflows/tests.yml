@@ -6,7 +6,7 @@ on:
     paths:
       - '**/Cargo.*'
       - '**.rs'
-      - '**.config.yml'
+      - '**/config.yml'
   pull_request:
     branches: [ "main" ]
     paths:
