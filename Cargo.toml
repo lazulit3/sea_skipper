@@ -18,7 +18,7 @@ license.workspace = true
 repository.workspace = true
 
 [dependencies]
-sea-orm = { version = "0.11", default-features = false }
+sea-orm = { version = "0.12", default-features = false }
 sea_skipper_macros = { path = "sea_skipper_macros", optional = true }
 serde = { version = "1" }
 
