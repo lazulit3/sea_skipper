@@ -1,0 +1,16 @@
+# docker-compose.yml providing database for running example tests
+version: '3.7'
+services:
+  sea-skipper-db:
+    env_file: .env
+    image: postgres:15-alpine
+    ports:
+      - 5433:5433
+    restart: always
+    volumes:
+      - type: volume
+        source: sea-skipper-example-db
+        target: /var/lib/postgres/data
+        read_only: false
+volumes:
+  sea-skipper-example-db:
